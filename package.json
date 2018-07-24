@@ -1,10 +1,10 @@
 {
-  "name": "my-component",
+  "name": "react-bootstrap-gtable",
   "version": "1.0.0",
   "description": "",
   "author": "g3org3",
   "license": "MIT",
-  "repository": "g3org3/my-component",
+  "repository": "g3org3/react-bootstrap-gtable",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

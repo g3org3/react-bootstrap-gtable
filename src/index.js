@@ -1,22 +1,35 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './styles.css'
+import ArrayTable from './ArrayTable'
+import ObjectTable from './ObjectTable'
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
+const defaultMessage = <p>Empty, 0 items found.</p>
 
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
+const GenericTable = (props) => {
+  if (props.data instanceof Array) {
+    return <ArrayTable defaultMessage={defaultMessage} {...props} />
+  } else {
+    return <ObjectTable defaultMessage={defaultMessage} {...props} />
   }
 }
+
+GenericTable.defaultProps = {
+  data: [],
+  className: 'table',
+  showObject: false,
+  onThClick: () => {},
+  defaultMessage,
+  defaultStringForObject: '[object object]'
+}
+
+GenericTable.propTypes = {
+  data: PropTypes.any,
+  className: PropTypes.string,
+  showObject: PropTypes.bool,
+  onThClick: PropTypes.func,
+  defaultMessage: PropTypes.element,
+  defaultStringForObject: PropTypes.string
+}
+
+export default GenericTable
