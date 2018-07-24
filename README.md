@@ -1,27 +1,27 @@
-# my-component
+# react-bootstrap-gtable
 
-> 
+>
 
-[![NPM](https://img.shields.io/npm/v/my-component.svg)](https://www.npmjs.com/package/my-component) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-bootstrap-gtable.svg)](https://www.npmjs.com/package/react-bootstrap-gtable) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save my-component
+npm install --save react-bootstrap-gtable
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import MyComponent from 'my-component'
+import GTable from "react-bootstrap-gtable";
 
+const users = [];
+// it handles arrays and objects
 class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
+  render() {
+    return <GTable data={users} />;
   }
 }
 ```
